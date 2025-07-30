@@ -26,7 +26,7 @@ const Navigation = () => {
     { key: 'contact', href: '#contact' },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href) => {
     setIsMobileMenuOpen(false);
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });

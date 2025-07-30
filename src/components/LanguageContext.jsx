@@ -1,14 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'en' | 'fa';
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext(undefined);
 
 const translations = {
   en: {
@@ -79,11 +71,11 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState('en');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
+    const savedLang = localStorage.getItem('language');
     if (savedLang && (savedLang === 'en' || savedLang === 'fa')) {
       setLanguage(savedLang);
     }
@@ -93,15 +85,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = language;
   }, [language]);
 
-  const handleSetLanguage = (lang: Language) => {
+  const handleSetLanguage = (lang) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
   };
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+  const t = (key) => {
+    return translations[language][key] || key;
   };
 
   return (

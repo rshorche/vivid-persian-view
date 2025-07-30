@@ -13,13 +13,15 @@ const Index = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background text-foreground">
           <Navigation />
-          <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
+          <main>
+            <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <ContactSection />
+          </main>
           <Footer />
         </div>
       </LanguageProvider>

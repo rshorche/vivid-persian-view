@@ -9,11 +9,11 @@ const SkillsSection = () => {
       title: language === 'fa' ? 'فرانت‌اند' : 'Frontend',
       skills: [
         { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
         { name: 'JavaScript', level: 95 },
         { name: 'HTML/CSS', level: 98 },
         { name: 'Tailwind CSS', level: 92 },
         { name: 'Next.js', level: 85 },
+        { name: 'Vue.js', level: 80 },
       ],
     },
     {
@@ -29,7 +29,7 @@ const SkillsSection = () => {
     },
   ];
 
-  const SkillBar = ({ skill }: { skill: { name: string; level: number } }) => (
+  const SkillBar = ({ skill }) => (
     <div className="mb-4">
       <div className="flex justify-between mb-2">
         <span className="text-foreground font-medium">{skill.name}</span>

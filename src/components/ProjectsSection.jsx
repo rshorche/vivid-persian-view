@@ -10,9 +10,9 @@ const ProjectsSection = () => {
     {
       title: language === 'fa' ? 'اپلیکیشن تجارت الکترونیک' : 'E-Commerce Application',
       description: language === 'fa' 
-        ? 'پلتفرم تجارت الکترونیک کامل با React و TypeScript'
-        : 'Complete e-commerce platform built with React and TypeScript',
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Context API'],
+        ? 'پلتفرم تجارت الکترونیک کامل با React و JavaScript'
+        : 'Complete e-commerce platform built with React and JavaScript',
+      tech: ['React', 'JavaScript', 'Tailwind CSS', 'Context API'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
       github: '#',
       demo: '#',

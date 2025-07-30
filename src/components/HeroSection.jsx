@@ -6,7 +6,7 @@ import heroBackground from '@/assets/hero-background.jpg';
 
 const HeroSection = () => {
   const { language, t } = useLanguage();
-  const parallaxRef = useRef<HTMLDivElement>(null);
+  const parallaxRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
